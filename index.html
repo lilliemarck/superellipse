@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Superellipse</title>
+    <script src="https://unpkg.com/vue"></script>
+
+    <script type="text/x-template" id="superellipse-template">
+      <g>
+        <polygon :points="polygonPoints"></polygon>
+      </g>
+    </script>   
+  </head>
+  <body>
+    <div id="app">
+      <svg :width="width" :height="height">
+          <superellipse :points="points"></superellipse>
+      </svg>
+        
+      <div v-for="(p, i) in points">
+        <label>{{i}}</label>
+        <input type="number" name="x:" v-model="p[0]">
+        <input type="number" name="y:" v-model="p[1]">
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
